@@ -1,9 +1,6 @@
-package com.stackroute.QG.model;
+package com.stackroute.maverick.domain;
 
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document(collection = "qnuser")
-public class User {
+public class AdminUser {
 
 	private int userId;
 	private String userName;
@@ -24,11 +21,11 @@ public class User {
 		this.userName = userName;
 	}
 
-	public User() {
+	public AdminUser() {
 
 	}
 
-	public User(int userId, String userName) {
+	public AdminUser(int userId, String userName) {
 		super();
 		this.userId = userId;
 		this.userName = userName;

@@ -1,15 +1,12 @@
-package com.stackroute.QG.model;
+package com.stackroute.maverick.domain;
 
 import java.util.List;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-@Document(collection = "qntopic")
 public class Topic {
 
 	private int topicId;
-	@Id
 	private String topicName;
+	private String topicImage;
 	private List<Questions> questions;
 
 	public int getTopicId() {
@@ -32,18 +29,27 @@ public class Topic {
 		return questions;
 	}
 
-	public void setQuestionStem(List<Questions> questions) {
+	public void setQuestions(List<Questions> questions) {
 		this.questions = questions;
 	}
 
-	public Topic(int topicId, String topicName, List<Questions> questions) {
+	public Topic(int topicId, String topicName, String topicImage, List<Questions> questions) {
 		super();
 		this.topicId = topicId;
 		this.topicName = topicName;
+		this.topicImage = topicImage;
 		this.questions = questions;
 	}
 
 	public Topic() {
 
+	}
+
+	public String getTopicImage() {
+		return topicImage;
+	}
+
+	public void setTopicImage(String topicImage) {
+		this.topicImage = topicImage;
 	}
 }

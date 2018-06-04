@@ -1,15 +1,13 @@
-package com.stackroute.QG.model;
-
-import java.util.List;
+package com.stackroute.maverick.domain;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "structuredQuestion")
-public class Category {
+@Document(collection = "categories")
+public class CategoriesModel {
 
 	private int categoryId;
 	private String categoryName;
-	private List<Topic> topic;
+	private String categoryImage;
 
 	public int getCategoryId() {
 		return categoryId;
@@ -27,23 +25,23 @@ public class Category {
 		this.categoryName = categoryName;
 	}
 
-	public List<Topic> getTopic() {
-		return topic;
+	public String getCategoryImage() {
+		return categoryImage;
 	}
 
-	public void setTopic(List<Topic> topic) {
-		this.topic = topic;
+	public void setCategoryImage(String categoryImage) {
+		this.categoryImage = categoryImage;
 	}
 
-	public Category(int categoryId, String categoryName, List<Topic> topic) {
+	public CategoriesModel() {
+
+	}
+
+	public CategoriesModel(int categoryId, String categoryName, String categoryImage) {
 		super();
 		this.categoryId = categoryId;
 		this.categoryName = categoryName;
-		this.topic = topic;
-	}
-
-	public Category() {
-
+		this.categoryImage = categoryImage;
 	}
 
 }

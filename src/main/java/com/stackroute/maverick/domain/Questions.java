@@ -1,20 +1,19 @@
-package com.stackroute.QG.model;
+package com.stackroute.maverick.domain;
 
 import java.util.List;
 
-import org.springframework.data.mongodb.core.mapping.Document;
-@Document(collection = "questionStem")
 public class Questions {
 
 	private int questionId;
 	private int questionLevel;
 	private String questionStem;
+	private String questionType;
 	private String option1;
 	private String option2;
 	private String option3;
 	private String option4;
 	private String correctAnswer;
-	private List<User> user;
+	private List<AdminUser> user;
 
 	public int getQuestionId() {
 		return questionId;
@@ -38,6 +37,14 @@ public class Questions {
 
 	public void setQuestionStem(String questionStem) {
 		this.questionStem = questionStem;
+	}
+
+	public String getQuestionType() {
+		return questionType;
+	}
+
+	public void setQuestionType(String questionType) {
+		this.questionType = questionType;
 	}
 
 	public String getOption1() {
@@ -80,20 +87,21 @@ public class Questions {
 		this.correctAnswer = correctAnswer;
 	}
 
-	public List<User> getUser() {
+	public List<AdminUser> getUser() {
 		return user;
 	}
 
-	public void setUser(List<User> user) {
+	public void setUser(List<AdminUser> user) {
 		this.user = user;
 	}
 
-	public Questions(int questionId, int questionLevel, String questionStem, String option1, String option2,
-			String option3, String option4, String correctAnswer, List<User> user) {
+	public Questions(int questionId, int questionLevel, String questionStem, String questionType, String option1,
+			String option2, String option3, String option4, String correctAnswer, List<AdminUser> user) {
 		super();
 		this.questionId = questionId;
 		this.questionLevel = questionLevel;
 		this.questionStem = questionStem;
+		this.questionType = questionType;
 		this.option1 = option1;
 		this.option2 = option2;
 		this.option3 = option3;
